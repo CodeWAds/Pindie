@@ -6,7 +6,6 @@ Website with games, using react, next.js, express.js + MongoDB
 ```bash
 npm i
 ```
-
 2. Run Backend on localhost:3001
 
 ```bash
