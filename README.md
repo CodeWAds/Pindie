@@ -1,7 +1,7 @@
 # Pindie
 Website with games, using react, next.js, express.js + MongoDB
 <h2>Run project</h2>
-1.Installing dependencies for Back and Front
+1. Installing dependencies for Back and Front
 
 ```bash
 npm i
