@@ -10,7 +10,7 @@ function cors(req, res, next) {
   }
 
 const allowedCors = [
-    "superpindie.nomoredomainswork.ru"
+    "https://superpindie.nomoredomainswork.ru"
 ];
 
 module.exports = cors;
