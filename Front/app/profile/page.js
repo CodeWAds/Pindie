@@ -9,7 +9,7 @@ import { useStore } from "@/app/store/app-store";
 export default function ProfilePage(props) {
 
     const store = useStore();
-    
+
     return (
         store.isAuth ?
         <div className={Styles.about__user}>

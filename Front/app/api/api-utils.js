@@ -67,6 +67,7 @@ export const authentication = async (url, data, typeForm) => {
 
             body: JSON.stringify(data),
         });
+        
         if (response.status !== 200 && typeForm === "auth") {
             throw new Error("Ошибка авторизации");
         } else if (response.status !== 200 && typeForm === "register") { throw new Error("Ошибка регистрации"); }

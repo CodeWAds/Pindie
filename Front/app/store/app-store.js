@@ -20,15 +20,13 @@ export const useStore = create((set) => ({
         const jwt = getJWT();
         if (jwt) {
             const user = await getMe(endpoints.me, jwt);
-            if (user) {
-                set({ isAuth: true, user, token: jwt });
-                setJWT(jwt);
-            } else {
+            if (user instanceof Error) {
                 set({ isAuth: false, user: null, token: null });
                 removeJWT();
+            } else {
+                set({ isAuth: true, user, token: jwt });
+                setJWT(jwt);
             }
-        } else {
-            set({ isAuth: false, user: null, token: null });
         }
     },
     openPopup: (typeForm) => {

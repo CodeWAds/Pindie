@@ -12,7 +12,6 @@ export const App = (props) => {
   const store = useStore();
 
   useEffect(() => { 
-
     store.checkAuth();
   }, []);
 

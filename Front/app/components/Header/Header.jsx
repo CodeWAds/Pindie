@@ -23,6 +23,10 @@ export const Header = () => {
 
   const openAuthForm = () => {
     store.openPopup('auth');
+  };
+
+  const openRegisterForm = () => {
+    store.openPopup('register')
   }
 
 
@@ -105,7 +109,7 @@ export const Header = () => {
               <button className={Styles.auth__button} onClick={openAuthForm}>
                 Войти
               </button>
-              <button className={Styles.register__button} onClick={store.openPopup}>
+              <button className={Styles.register__button} onClick={openRegisterForm}>
                 Зарегистрироваться
               </button>
             </>
