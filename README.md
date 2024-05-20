@@ -1,6 +1,7 @@
 # Pindie
 Website with games, using react, next.js, express.js + MongoDB
 <h2>Run project</h2>
+
 1. Installing dependencies for Back and Front
 
 ```bash
@@ -16,3 +17,6 @@ npm run start
 ```bash
 npm run dev
 ```
+
+There is Frontend: https://superpindie.nomoredomainswork.ru/
+There is Backend: https://superpindie-backend.nomoredomainswork.ru/
