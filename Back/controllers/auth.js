@@ -3,13 +3,23 @@ const jwt = require("jsonwebtoken");
 const path = require('path');
 
 const login = (req, res) => {
-    const { email, password } = req.body;
+    
+    if (req.pass) {
+        email = req.body.email;
+        password = req.pass;
+    } else {
+        const { email: userEmail, password: userPassword } = req.body;
+        email = userEmail;
+        password = userPassword;
+    };
     users
         .findUserByCredentials(email, password)
         .then((user) => {
-            const token = jwt.sign({ id: user._id,
+            const token = jwt.sign({
+                id: user._id,
                 username: user.username,
-                email: user.email, }, "some-secret-key", {
+                email: user.email,
+            }, "some-secret-key", {
                 expiresIn: 3600
             });
             return { user, token };
@@ -29,32 +39,6 @@ const login = (req, res) => {
         });
 };
 
-const registration = (req, res) => {
-    const { email, password } = req.body;
-    users
-        .findUserByEmail(email, password)
-        .then((user) => {
-            const token = jwt.sign({ id: user._id,
-                username: user.username,
-                email: user.email, }, "some-secret-key", {
-                expiresIn: 3600
-            });
-            return { user, token };
-        })
-        .then(({ user, token }) => {
-            res
-                .status(200)
-                .send({
-                    _id: user._id,
-                    username: user.username,
-                    email: user.email,
-                    jwt: token
-                });
-        })
-        .catch(error => {
-            res.status(401).send({ message: error.message });
-        });
-};
 
 const sendIndex = (req, res) => {
     if (req.cookies.jwt) {
@@ -72,4 +56,4 @@ const sendDashboard = (req, res) => {
     res.sendFile(path.join(__dirname, "../public/admin/dashboard.html"));
 };
 
-module.exports = { login, sendIndex, sendDashboard, registration };
+module.exports = { login, sendIndex, sendDashboard };

@@ -23,8 +23,8 @@ usersRouter.get('/users', findAllUsers, sendAllUsers);
 usersRouter.post(
   "/users",
   findAllUsers,
-  checkIsUserExists,
   checkEmptyNameAndEmailAndPassword,
+  checkIsUserExists,
   checkAuth,
   hashPassword,
   createUser,

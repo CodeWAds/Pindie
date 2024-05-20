@@ -1,4 +1,4 @@
-const { login, sendIndex, sendDashboard, registration } = require('./auth');
+const { login, sendIndex, sendDashboard } = require('./auth');
 const { sendAllCategories,
     sendCategoryCreated,
     sendCategoryById,
@@ -38,6 +38,5 @@ module.exports = {
     sendMe,
     login,
     sendIndex,
-    sendDashboard,
-    registration
+    sendDashboard
 }

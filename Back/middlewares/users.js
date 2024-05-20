@@ -66,6 +66,7 @@ const checkIsUserExists = async (req, res, next) => {
 
 const hashPassword = async (req, res, next) => {
   try {
+    req.pass = req.body.password
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(req.body.password, salt);
     req.body.password = hash;
