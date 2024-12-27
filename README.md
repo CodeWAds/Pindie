@@ -17,11 +17,3 @@ npm run start
 ```bash
 npm run dev
 ```
-
-<p>There is Frontend: </p>
-
-```https://superpindie.nomoredomainswork.ru/```
-
-<p>There is Backend:</p>
-
-```https://superpindie-backend.nomoredomainswork.ru/```
